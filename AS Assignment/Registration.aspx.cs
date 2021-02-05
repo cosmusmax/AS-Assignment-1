@@ -132,7 +132,7 @@ namespace AS_Assignment
                     {
                         string jsonResponse = readStream.ReadToEnd();
 
-                        lbl_gScore.Text = jsonResponse.ToString();
+                      //  lbl_gScore.Text = jsonResponse.ToString();
 
                         JavaScriptSerializer js = new JavaScriptSerializer();
 

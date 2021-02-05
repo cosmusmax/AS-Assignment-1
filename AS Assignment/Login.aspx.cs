@@ -23,8 +23,7 @@ namespace AS_Assignment
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (ValidateCaptcha())
-            {
+            
                 string pwd = tb_pwd.Text.ToString().Trim();
                 string userid = tb_email.Text.ToString().Trim();
                 SHA512Managed hashing = new SHA512Managed();
@@ -60,7 +59,7 @@ namespace AS_Assignment
                 }
                 finally { }
 
-            }
+             
         }
             
         protected string getDBHash(string userid)
@@ -156,7 +155,7 @@ namespace AS_Assignment
                     {
                         string jsonResponse = readStream.ReadToEnd();
 
-                        lbl_gScore.Text = jsonResponse.ToString();
+                       // lbl_gScore.Text = jsonResponse.ToString();
 
                         JavaScriptSerializer js = new JavaScriptSerializer();
 

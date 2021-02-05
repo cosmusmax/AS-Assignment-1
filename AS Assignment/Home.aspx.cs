@@ -98,7 +98,7 @@ namespace AS_Assignment
             }
         }
         
-        protected void LogoutMe(object sender, EventArgs e)
+        protected void btn_logout_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Session.Abandon();
@@ -123,9 +123,9 @@ namespace AS_Assignment
         {
             if (Session["UserID"] != null && Session["AuthToken"] != null && Request.Cookies["AuthToken"] != null)
             {
-                name = (string)Session["userID"];
+               // name = (string)Session["userID"];
 
-                displayUserProfile(name);
+               // displayUserProfile(name);
                 if (!Session["AuthToken"].ToString().Equals(Request.Cookies["AuthToken"].Value))
                 {
                     Response.Redirect("Login.aspx", false);
@@ -159,10 +159,6 @@ namespace AS_Assignment
             // {
             //     Response.Redirect("Login.aspx", false);
             //  }
-        }
-        protected void btn_logout_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Login.aspx");
-        }
+       
     }
 }
